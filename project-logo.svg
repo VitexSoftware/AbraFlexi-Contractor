@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="500"
+   height="500"
+   viewBox="0 0 500 500"
+   fill="none"
+   class="abui-icon-size-28px supplierContract"
+   data-class="max400"
+   data-html="true"
+   data-isicon="true"
+   tabindex="-1"
+   version="1.1"
+   id="svg344"
+   sodipodi:docname="project-logo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs348">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath20">
+      <path
+         d="M 64.09713,512 H 447.9029 c 22.2879,0 30.3701,-2.3206 38.5182,-6.6783 8.1482,-4.3577 14.5429,-10.7524 18.9006,-18.9006 C 509.6794,478.273 512,470.1908 512,447.9029 V 64.09713 C 512,41.80916 509.6794,33.72701 505.3217,25.57886 500.964,17.43071 494.5693,11.03599 486.4211,6.678318 478.273,2.32064 470.1908,0 447.9029,0 H 64.09713 C 41.80916,0 33.72701,2.32064 25.57886,6.678318 17.43071,11.03599 11.03599,17.43071 6.678318,25.57886 2.32064,33.72701 0,41.80916 0,64.09713 V 447.9029 c 0,22.2879 2.32064,30.3701 6.678318,38.5182 4.357672,8.1482 10.752392,14.5429 18.900542,18.9006 8.14815,4.3577 16.2303,6.6783 38.51827,6.6783 z"
+         clip-rule="evenodd"
+         id="path18" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26">
+      <path
+         d="M 0,0 H 512 V 512 H 0 Z"
+         id="path24" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath36">
+      <path
+         d="M 310.6214,362 424.7089,162.0939 H 310.6961 l -57.0086,99.4988 z"
+         clip-rule="evenodd"
+         id="path34" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath42">
+      <path
+         d="M 0,0 H 512 V 512 H 0 Z"
+         id="path40" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath52">
+      <path
+         d="M 197.1006,362 83.51535,162.0939 H 197.1006 L 310.6214,362 Z"
+         clip-rule="evenodd"
+         id="path50" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath58">
+      <path
+         d="M 0,0 H 512 V 512 H 0 Z"
+         id="path56" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview346"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.65186407"
+     inkscape:cx="-338.26071"
+     inkscape:cy="647.37423"
+     inkscape:window-width="1920"
+     inkscape:window-height="1120"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg344" />
+  <g
+     id="g12"
+     transform="matrix(0.92655364,0,0,-0.92655364,21.874819,469.99107)" />
+  <g
+     id="g315"
+     transform="matrix(0.92655364,0,0,-0.92655364,12.802269,487.19773)">
+    <g
+       id="g14">
+      <g
+         id="g16"
+         clip-path="url(#clipPath20)">
+        <g
+           id="g22"
+           clip-path="url(#clipPath26)">
+          <path
+             d="M -1,513 H 513 V -1 H -1 Z"
+             style="fill:#f6b102;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path28" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g30">
+      <g
+         id="g32"
+         clip-path="url(#clipPath36)">
+        <g
+           id="g38"
+           clip-path="url(#clipPath42)">
+          <path
+             d="M 252.6875,363 H 425.7089 V 161.0939 H 252.6875 Z"
+             style="fill:#fdebbf;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path44" />
+        </g>
+      </g>
+    </g>
+    <g
+       id="g46">
+      <g
+         id="g48"
+         clip-path="url(#clipPath52)">
+        <g
+           id="g54"
+           clip-path="url(#clipPath58)">
+          <path
+             d="M 82.51535,363 H 311.6214 V 161.0939 H 82.51535 Z"
+             style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+             id="path60" />
+        </g>
+      </g>
+    </g>
+  </g>
+  <g
+     id="g352"
+     transform="matrix(7.8216807,0,0,7.8216807,256.30262,243.6874)">
+    <g
+       id="ic_SupplierContract">
+      <path
+         id="Combined-Shape"
+         d="M 13,27 H 7 A 2,2 0 0 1 5,25 V 7 A 2,2 0 0 1 7,5 h 10 l 4,4 v 2.25 M 17,5 v 4 h 4 M 9,12.75 h 6 m -6,4 h 5 m -5,4 h 3 M 24,17 l 2,2 -2,2 m 2,-2 h -7 m 1,4 -2,2 2,2 m -2,-2 h 7"
+         stroke="#111619"
+         stroke-width="1.5"
+         stroke-linecap="round"
+         stroke-linejoin="round" />
+    </g>
+  </g>
+</svg>
