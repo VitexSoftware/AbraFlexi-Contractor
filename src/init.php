@@ -29,7 +29,7 @@ $authSessionId = $oPage->getRequestValue('authSessionId');
 $companyUrl = $oPage->getRequestValue('companyUrl');
 
 if ($authSessionId && $companyUrl) {
-    $_SESSION['connection'] = \AbraFlexi\RO::companyUrlToOptions($companyUrl);
+    $_SESSION['connection'] = \AbraFlexi\Functions::companyUrlToOptions($companyUrl);
     $_SESSION['connection']['authSessionId'] = $authSessionId;
 }
 

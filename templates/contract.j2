@@ -1,0 +1,111 @@
+<h1>Smlouva</h1>
+
+Firma: {{ contract.firma.nazev }}<br>
+Kod: {{ contract.firma.kod }}<br>
+Firma: {{ contract.firma.nazev }}<br>
+
+<br>
+Číslo smlouvy: {{ contract.kod }} <br>
+Název: {{ contract.nazev }} <br>
+Popis: {{ contract.popis }} <br>
+Sablona: {{ contract.sablona }} <br>
+Kód: {{ contract.kod }} <br>
+Typ smlouvy: {{ contract.typSml.showAs }} <br>
+Stav smlouvy: {{ contract.stavSml.showAs }} <br>
+Smlouva od: {{ contract.smlouvaOd }} <br>
+Smlouva do: {{ contract.smlouvaDo }} <br>
+Datum podepsání: {{ contract.datumPodepsani }} <br>
+Datum účinnosti: {{ contract.datumUcinnosti }} <br>
+Frekvence fakturace: {{ contract.frekFakt }} <br>
+Den fakturace: {{ contract.den }} <br>
+Měsíc fakturace: {{ contract.mesic }} <br>
+Způsob fakturace: {{ contract.zpusFaktK }} <br>
+Dny fakturace: {{ contract.dnyFakt }} <br>
+Variabilní symbol: {{ contract.varSym }} <br>
+Číslo dokladu: {{ contract.cisDosle }} <br>
+Číslo smlouvy proti: {{ contract.cisSmlProti }} <br>
+Automatická generace: {{ contract.autoGen }} <br>
+Automatický e-mail: {{ contract.autoMail }} <br>
+Automatické prodloužení: {{ contract.autoProdl }} <br>
+Automatická prodloužení: {{ contract.autoProlong }} <br>
+Automatická zakázka: {{ contract.autoZakazka }} <br>
+Datum vystavení zálohové faktury: {{ contract.datVystZDuzp }} <br>
+Generovat nulové faktury: {{ contract.generovatNuloveFaktury }} <br>
+Ignorovat typ smlouvy: {{ contract.ignorovatTypSml }} <br>
+Přeplatky: {{ contract.preplatky }} <br>
+Variabilní symbol faktury: {{ contract.varSymFakt }} <br>
+Štítky: {{ contract.stitky }} <br>
+Počet příloh: {{ contract.pocetPriloh }} <br>
+Katastrální území: {{ contract.katastrUzemi }} <br>
+Parcela: {{ contract.parcela }} <br>
+Výpovědní lhůta: {{ contract.vypovedniLhuta }} <br>
+Datum založení: {{ contract.datZaloz }} <br>
+Datum výpovědi: {{ contract.datVypoz }} <br>
+Typ dokladu faktury splatnost dny: {{ contract.typDoklFakSplatDny }} <br>
+Firma: {{ contract.firma.showAs }} <br>
+Firma fakturace: {{ contract.firmaFakt.showAs }} <br>
+Zakázka: {{ contract.zakazka.showAs }} <br>
+Středisko: {{ contract.stredisko.showAs }} <br>
+Typ dokladu faktury: {{ contract.typDoklFak.showAs }} <br>
+Konstantní symbol: {{ contract.konSym.showAs }} <br>
+Typ dokladu faktury středisko: {{ contract.typDoklFakStredisko.showAs }} <br>
+Typ dokladu faktury činnost: {{ contract.typDoklFakCinnost.showAs }} <br>
+Typ dokladu faktury bankovní spojení: {{ contract.typDoklFakBspBan.showAs }} <br>
+Zodpovědná osoba: {{ contract.zodpOsoba.showAs }} <br>
+
+<h2>Položky smlouvy</h2>
+
+{% for contractItem in contract.polozkySmlouvy %}
+    <strong>{{ contractItem.nazev }}</strong> <br>
+    Čas poslední aktualizace: {{ contractItem.lastUpdate }} <br>
+    Kód: {{ contractItem.kod }} <br>
+    Název: {{ contractItem.nazev }} <br>
+    Název A: {{ contractItem.nazevA }} <br>
+    Název B: {{ contractItem.nazevB }} <br>
+    Název C: {{ contractItem.nazevC }} <br>
+    Popis: {{ contractItem.popis }} <br>
+    Poznámka: {{ contractItem.poznam }} <br>
+    Číslo řádku: {{ contractItem.cisRad }} <br>
+    Platí od data: {{ contractItem.platiOdData }} <br>
+    Platí do data: {{ contractItem.platiDoData }} <br>
+    Frekvence fakturace: {{ contractItem.frekFakt }} <br>
+    Den: {{ contractItem.den }} <br>
+    Měsíc: {{ contractItem.mesic }} <br>
+    Způsob fakturace: {{ contractItem.zpusFaktK@showAs }} <br>
+    Dny fakturace: {{ contractItem.dnyFakt }} <br>
+    Variabilní symbol: {{ contractItem.varSym }} <br>
+    Cena ručně: {{ contractItem.cenaRucne }} <br>
+    Cena za měrnou jednotku: {{ contractItem.cenaMj }} <br>
+    Množství měrných jednotek: {{ contractItem.mnozMj }} <br>
+    Celková cena: {{ contractItem.cenaCelkem }} <br>
+    DPH ručně: {{ contractItem.dphRucne }} <br>
+    Typ ceny DPH: {{ contractItem.typCenyDphK@showAs }} <br>
+    Typ sazby DPH: {{ contractItem.typSzbDphK@showAs }} <br>
+    Sleva: {{ contractItem.sleva }} <br>
+    Externí generování: {{ contractItem.extGener }} <br>
+    Datum poslední fakturační období: {{ contractItem.datPoslFaktObd }} <br>
+    Automatická generace: {{ contractItem.autoGen }} <br>
+    Valorizovat: {{ contractItem.valorizovat }} <br>
+    Valorizovat měsíc: {{ contractItem.valorizovatMesic }} <br>
+    Štítky: {{ contractItem.stitky }} <br>
+    Počet příloh: {{ contractItem.pocetPriloh }} <br>
+    Číslo dokladu: {{ contractItem.cisDosle }} <br>
+    Smlouva: {{ contractItem.smlouva@showAs }} <br>
+    Ceník: {{ contractItem.cenik@showAs }} <br>
+    Sklad: {{ contractItem.sklad }} <br>
+    Místo: {{ contractItem.misto }} <br>
+    Typ účetní operace: {{ contractItem.typUcOp@showAs }} <br>
+    Typ dokladu faktury: {{ contractItem.typDoklFak@showAs }} <br>
+    Středisko: {{ contractItem.stredisko@showAs }} <br>
+    Činnost: {{ contractItem.cinnost }} <br>
+    Zakázka: {{ contractItem.zakazka }} <br>
+    Bankovní spojení: {{ contractItem.banSpoj }} <br>
+    Firma fakturace: {{ contractItem.firmaFakt }} <br>
+    Valorizační položka smlouvy: {{ contractItem.valorPolSml }} <br>
+    Cena: {{ contractItem.cenaCelkem }} <br>
+    Množství: {{ contractItem.mnozMj }} <br>
+    DPH: {{ contractItem.typCenyDphK@showAs }} <br>
+    Sleva: {{ contractItem.sleva }} <br>
+    <br>
+
+{% endfor %}

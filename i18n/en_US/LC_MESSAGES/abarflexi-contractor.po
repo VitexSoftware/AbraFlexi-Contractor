@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: abraflexi-enhancer 1.0\n"
-"POT-Creation-Date: 2024-07-31 12:29+0200\n"
-"PO-Revision-Date: 2024-07-31 12:29+0200\n"
-"Last-Translator: Vítězslav Dvořák <info@vitexsoftware.cz>\n"
+"POT-Creation-Date: 2024-09-15 20:32+0200\n"
+"PO-Revision-Date: 2024-09-15 20:32+0200\n"
+"Last-Translator: Vítězslav Dvořák <vitex@vitexsoftware.cz>\n"
 "Language-Team: VitexSoftware\n"
 "Language: en_US\n"
 "MIME-Version: 1.0\n"
@@ -16,126 +16,130 @@ msgstr ""
 "X-Poedit-SearchPath-0: ../src\n"
 "X-Poedit-SearchPathExcluded-0: ../vendor\n"
 
-#: ../src/Enhancer/InvoiceEnhancer.php:46
-msgid "Pricelist item found. Assigning ..."
-msgstr "Pricelist item found. Assigning ..."
+#: ../src/Contractor/Ui/AppLogo.php:27 ../src/Contractor/Ui/PageBottom.php:35
+#, fuzzy
+#| msgid "AbraFlexi Invoice Enhancer"
+msgid "AbraFlexi Contractor"
+msgstr "AbraFlexi Invoice Enhancer"
 
-#: ../src/Enhancer/InvoiceEnhancer.php:48
-msgid "Pricelist Item not found. Creating new one"
-msgstr "Pricelist Item not found. Creating new one"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:65
-#, php-format
-msgid "Invoice Item %s converted to Pricelist Item %s"
-msgstr "Invoice Item %s converted to Pricelist Item %s"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:67
-#, php-format
-msgid "Error converting Invoice Item %s to Pricelist Item"
-msgstr "Error converting Invoice Item %s to Pricelist Item"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:106
-msgid "supplier price update"
-msgstr "supplier price update"
-
-#: ../src/Enhancer/ui/AppLogo.php:18 ../src/Enhancer/ui/PageBottom.php:26
-#: ../src/install.php:61
-#| msgid "Invoice Enhancer installer"
-msgid "Invoice Enhancer"
-msgstr "Invoice Enhancer"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:21
-msgid "Do it!"
-msgstr "Do it!"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Code"
-msgstr "Code"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "EAN"
-msgstr "EAN"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Name"
-msgstr "Name"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Price"
-msgstr "Price"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Convert"
-msgstr "Convert"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:64
-msgid "No Subitems in this invoice"
-msgstr "No Subitems in this invoice"
-
-#: ../src/Enhancer/ui/PageBottom.php:29
+#: ../src/Contractor/Ui/PageBottom.php:38
 msgid "Source Code"
 msgstr "Source Code"
 
-#: ../src/Enhancer/ui/PageBottom.php:30
+#: ../src/Contractor/Ui/PageBottom.php:39
 msgid "LinkedIN Producer page"
 msgstr "LinkedIN Producer page"
 
-#: ../src/index.php:22
+#: ../src/index.php:28
 msgid "Bad call"
 msgstr "Bad call"
 
-#: ../src/index.php:23
+#: ../src/index.php:29
 msgid "Please setup your AbraFlexi connection"
 msgstr "Please setup your AbraFlexi connection"
 
-#: ../src/index.php:34 ../src/init.php:43
+#: ../src/index.php:42 ../src/init.php:50
 msgid "Session Expired"
 msgstr "Session Expired"
 
-#: ../src/install.php:16
-#| msgid "Invoice Enhancer installer"
-msgid "InvoiceEnhancer"
+#: ../src/install.php:25
+#, fuzzy
+#| msgid "InvoiceEnhancer"
+msgid "InvoiceContractor"
 msgstr "InvoiceEnhancer"
 
-#: ../src/install.php:20
-msgid "Invoice Enhancer installer"
-msgstr "Invoice Enhancer installer"
+#: ../src/install.php:29
+#, fuzzy
+#| msgid "AbraFlexi Invoice Enhancer"
+msgid "AbraFlexi Contractor installer"
+msgstr "AbraFlexi Invoice Enhancer"
 
-#: ../src/install.php:33
+#: ../src/install.php:42
 msgid "AbraFlexi WebView"
 msgstr "AbraFlexi WebView"
 
-#: ../src/install.php:33
+#: ../src/install.php:42
 msgid "System Browser"
 msgstr "System Browser"
 
-#: ../src/install.php:35
+#: ../src/install.php:44
 msgid "Open results in AbraFlexi WebView or in System default browser"
 msgstr "Open results in AbraFlexi WebView or in System default browser"
 
-#: ../src/install.php:44
-#| msgid "Install Button"
-msgid "Install Button to AbraFlexi"
+#: ../src/install.php:53
+#, fuzzy
+#| msgid "Install Button to AbraFlexi"
+msgid "Install Contractor's Button to AbraFlexi"
 msgstr "Install Button to AbraFlexi"
 
-#: ../src/install.php:61
-#| msgid "Invoice Item %s converted to Pricelist Item %s"
-msgid "Invoice items to Pricelist Items convertor"
-msgstr "Invoice items to Pricelist Items convertor"
+#: ../src/install.php:72 ../src/install.php:73
+msgid "Contractor"
+msgstr ""
 
-#: ../src/install.php:67
-#| msgid "Enhancer Overview Button created"
-msgid "Invoice Enhancer Button created"
+#: ../src/install.php:82
+#, fuzzy
+#| msgid "Invoice Enhancer Button created"
+msgid "Contractor Button created"
 msgstr "Invoice Enhancer Button created"
 
-#: ../src/install.php:71
+#: ../src/install.php:86
 msgid "My App URL"
 msgstr "My App URL"
 
-#: ../src/install.php:80
-#| msgid "AbraFlexi Enhancer Overview"
-msgid "AbraFlexi Invoice Enhancer"
-msgstr "AbraFlexi Invoice Enhancer"
+#: ../src/install.php:93
+#, fuzzy
+#| msgid "Install Button to AbraFlexi"
+msgid "Contractor for AbraFlexi"
+msgstr "Install Button to AbraFlexi"
+
+#~ msgid "Pricelist item found. Assigning ..."
+#~ msgstr "Pricelist item found. Assigning ..."
+
+#~ msgid "Pricelist Item not found. Creating new one"
+#~ msgstr "Pricelist Item not found. Creating new one"
+
+#, php-format
+#~ msgid "Invoice Item %s converted to Pricelist Item %s"
+#~ msgstr "Invoice Item %s converted to Pricelist Item %s"
+
+#, php-format
+#~ msgid "Error converting Invoice Item %s to Pricelist Item"
+#~ msgstr "Error converting Invoice Item %s to Pricelist Item"
+
+#~ msgid "supplier price update"
+#~ msgstr "supplier price update"
+
+#~| msgid "Invoice Enhancer installer"
+#~ msgid "Invoice Enhancer"
+#~ msgstr "Invoice Enhancer"
+
+#~ msgid "Do it!"
+#~ msgstr "Do it!"
+
+#~ msgid "Code"
+#~ msgstr "Code"
+
+#~ msgid "EAN"
+#~ msgstr "EAN"
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Price"
+#~ msgstr "Price"
+
+#~ msgid "Convert"
+#~ msgstr "Convert"
+
+#~ msgid "No Subitems in this invoice"
+#~ msgstr "No Subitems in this invoice"
+
+#~ msgid "Invoice Enhancer installer"
+#~ msgstr "Invoice Enhancer installer"
+
+#~| msgid "Invoice Item %s converted to Pricelist Item %s"
+#~ msgid "Invoice items to Pricelist Items convertor"
+#~ msgstr "Invoice items to Pricelist Items convertor"
 
 #~ msgid "Enhancer Overview"
 #~ msgstr "Enhancer Overview"

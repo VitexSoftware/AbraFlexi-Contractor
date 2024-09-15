@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2024-08-20 16:54+0200\n"
-"PO-Revision-Date: 2024-08-20 16:55+0200\n"
-"Last-Translator: Vítězslav Dvořák <info@vitexsoftware.cz>\n"
+"POT-Creation-Date: 2024-09-15 20:31+0200\n"
+"PO-Revision-Date: 2024-09-15 20:31+0200\n"
+"Last-Translator: Vítězslav Dvořák <vitex@vitexsoftware.cz>\n"
 "Language-Team: \n"
 "Language: cs_CZ\n"
 "MIME-Version: 1.0\n"
@@ -16,122 +16,130 @@ msgstr ""
 "X-Poedit-SearchPath-0: ../src\n"
 "X-Poedit-SearchPathExcluded-0: ../vendor\n"
 
-#: ../src/Enhancer/InvoiceEnhancer.php:46
-msgid "Pricelist item found. Assigning ..."
-msgstr "Ceníková položka nalezena. Přiřazuji ..."
+#: ../src/Contractor/Ui/AppLogo.php:27 ../src/Contractor/Ui/PageBottom.php:35
+#, fuzzy
+#| msgid "AbraFlexi Invoice Enhancer"
+msgid "AbraFlexi Contractor"
+msgstr "AbraFlexi Vylepšovač faktur"
 
-#: ../src/Enhancer/InvoiceEnhancer.php:48
-msgid "Pricelist Item not found. Creating new one"
-msgstr "Položka ceníku nenalezena. Vytvářím novou"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:65
-#, php-format
-msgid "Invoice Item %s converted to Pricelist Item %s"
-msgstr "Položka faktury %s zkonvertováná na položku ceníku %s"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:67
-#, php-format
-msgid "Error converting Invoice Item %s to Pricelist Item"
-msgstr "Chyba konverze položky faktury %s na položku ceníku"
-
-#: ../src/Enhancer/InvoiceEnhancer.php:107
-msgid "supplier price update"
-msgstr "aktualizace dodavatelské ceny"
-
-#: ../src/Enhancer/ui/AppLogo.php:18 ../src/Enhancer/ui/PageBottom.php:26
-#: ../src/install.php:62
-msgid "Invoice Enhancer"
-msgstr "Vylepšovač faktur"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:21
-msgid "Do it!"
-msgstr "Do toho!"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Code"
-msgstr "Kód"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "EAN"
-msgstr "EAN"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Name"
-msgstr "Název"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Price"
-msgstr "Cena"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:35
-msgid "Convert"
-msgstr "Konverze"
-
-#: ../src/Enhancer/ui/InvoiceForm.php:64
-msgid "No Subitems in this invoice"
-msgstr "Faktura nemá položky"
-
-#: ../src/Enhancer/ui/PageBottom.php:29
+#: ../src/Contractor/Ui/PageBottom.php:38
 msgid "Source Code"
 msgstr "Zdrojový kód"
 
-#: ../src/Enhancer/ui/PageBottom.php:30
+#: ../src/Contractor/Ui/PageBottom.php:39
 msgid "LinkedIN Producer page"
 msgstr "Stránka vývojáře na LinkedIN"
 
-#: ../src/index.php:22
+#: ../src/index.php:28
 msgid "Bad call"
 msgstr "Chybné volání"
 
-#: ../src/index.php:23
+#: ../src/index.php:29
 msgid "Please setup your AbraFlexi connection"
 msgstr "Prosím nastavte připojení k vašemu AbraFlexi"
 
-#: ../src/index.php:34 ../src/init.php:43
+#: ../src/index.php:42 ../src/init.php:50
 msgid "Session Expired"
 msgstr "Sezení vypršelo"
 
-#: ../src/install.php:17
-msgid "InvoiceEnhancer"
+#: ../src/install.php:25
+#, fuzzy
+#| msgid "InvoiceEnhancer"
+msgid "InvoiceContractor"
 msgstr "VylepšovačFaktur"
 
-#: ../src/install.php:21
-msgid "Invoice Enhancer installer"
-msgstr "Instalátor vylepšovače faktur"
+#: ../src/install.php:29
+#, fuzzy
+#| msgid "AbraFlexi Invoice Enhancer"
+msgid "AbraFlexi Contractor installer"
+msgstr "AbraFlexi Vylepšovač faktur"
 
-#: ../src/install.php:34
+#: ../src/install.php:42
 msgid "AbraFlexi WebView"
 msgstr "AbraFlexi WebView"
 
-#: ../src/install.php:34
+#: ../src/install.php:42
 msgid "System Browser"
 msgstr "Systémový prohlížeč"
 
-#: ../src/install.php:36
+#: ../src/install.php:44
 msgid "Open results in AbraFlexi WebView or in System default browser"
 msgstr ""
 "Otevřít výsledky ve webvém okýnku AbraFlexi nebo ve výchozím systémovém "
 "prohlížeči"
 
-#: ../src/install.php:45
-msgid "Install Button to AbraFlexi"
+#: ../src/install.php:53
+#, fuzzy
+#| msgid "Install Button to AbraFlexi"
+msgid "Install Contractor's Button to AbraFlexi"
 msgstr "Instaluj tlačítko do AbraFlexi"
 
-#: ../src/install.php:62
-msgid "Invoice items to Pricelist Items convertor"
-msgstr "Konvertor položek faktury na ceníkové položky"
+#: ../src/install.php:72 ../src/install.php:73
+msgid "Contractor"
+msgstr ""
 
-#: ../src/install.php:68
-msgid "Invoice Enhancer Button created"
+#: ../src/install.php:82
+#, fuzzy
+#| msgid "Invoice Enhancer Button created"
+msgid "Contractor Button created"
 msgstr "Tlačítko vylepšovače faktur bylo vytvořeno"
 
-#: ../src/install.php:72
+#: ../src/install.php:86
 msgid "My App URL"
 msgstr "URL mé aplikace"
 
-#: ../src/install.php:81
-msgid "AbraFlexi Invoice Enhancer"
-msgstr "AbraFlexi Vylepšovač faktur"
+#: ../src/install.php:93
+#, fuzzy
+#| msgid "Install Button to AbraFlexi"
+msgid "Contractor for AbraFlexi"
+msgstr "Instaluj tlačítko do AbraFlexi"
+
+#~ msgid "Pricelist item found. Assigning ..."
+#~ msgstr "Ceníková položka nalezena. Přiřazuji ..."
+
+#~ msgid "Pricelist Item not found. Creating new one"
+#~ msgstr "Položka ceníku nenalezena. Vytvářím novou"
+
+#, php-format
+#~ msgid "Invoice Item %s converted to Pricelist Item %s"
+#~ msgstr "Položka faktury %s zkonvertováná na položku ceníku %s"
+
+#, php-format
+#~ msgid "Error converting Invoice Item %s to Pricelist Item"
+#~ msgstr "Chyba konverze položky faktury %s na položku ceníku"
+
+#~ msgid "supplier price update"
+#~ msgstr "aktualizace dodavatelské ceny"
+
+#~ msgid "Invoice Enhancer"
+#~ msgstr "Vylepšovač faktur"
+
+#~ msgid "Do it!"
+#~ msgstr "Do toho!"
+
+#~ msgid "Code"
+#~ msgstr "Kód"
+
+#~ msgid "EAN"
+#~ msgstr "EAN"
+
+#~ msgid "Name"
+#~ msgstr "Název"
+
+#~ msgid "Price"
+#~ msgstr "Cena"
+
+#~ msgid "Convert"
+#~ msgstr "Konverze"
+
+#~ msgid "No Subitems in this invoice"
+#~ msgstr "Faktura nemá položky"
+
+#~ msgid "Invoice Enhancer installer"
+#~ msgstr "Instalátor vylepšovače faktur"
+
+#~ msgid "Invoice items to Pricelist Items convertor"
+#~ msgstr "Konvertor položek faktury na ceníkové položky"
 
 #~ msgid "Enhancer Overview"
 #~ msgstr "Přehled vztahu"

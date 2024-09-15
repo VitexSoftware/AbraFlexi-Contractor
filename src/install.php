@@ -22,7 +22,7 @@ use Ease\TWB5\Row;
 use Ease\TWB5\WebPage;
 use Ease\TWB5\Widgets\Toggle;
 
-\define('EASE_APPNAME', _('InvoiceContractor'));
+\define('EASE_APPNAME', _('AbraFlexi-Contractor'));
 
 require_once \dirname(__DIR__).'/vendor/autoload.php';
 
@@ -37,7 +37,7 @@ $loginForm = new ConnectionForm(['action' => 'install.php']);
 $loginForm->addInput(
     new Toggle(
         'browser',
-        isset($_REQUEST) && \array_key_exists('browser', $_REQUEST),
+        \array_key_exists('browser', $_REQUEST),
         'automatic',
         ['data-on' => _('AbraFlexi WebView'), 'data-off' => _('System Browser')],
     ),
@@ -57,7 +57,7 @@ $baseUrl = \Ease\WebPage::getRequestValue('myurl').'/index.php?authSessionId=${a
 $buttonUrl = $baseUrl.'&kod=${object.kod}&id=${object.id}';
 
 if ($oPage->isPosted()) {
-    $browser = isset($_REQUEST) && \array_key_exists('browser', $_REQUEST) ? 'automatic' : 'desktop';
+    $browser = \array_key_exists('browser', $_REQUEST) ? 'automatic' : 'desktop';
 
     $buttoner = new \AbraFlexi\RW(
         null,

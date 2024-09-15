@@ -36,7 +36,7 @@ if (empty($kod)) {
             //          $invoicer->convertSelected($_REQUEST);
         }
 
-        //        $oPage->body->addItem(new InvoiceForm($invoicer));
+        $oPage->body->addItem(new Ui\ContractForm($contractor));
     } catch (\AbraFlexi\Exception $exc) {
         if ($exc->getCode() === 401) {
             $oPage->body->addItem(new \Ease\Html\H2Tag(_('Session Expired')));

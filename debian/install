@@ -1,0 +1,7 @@
+debian/composer.json       	usr/lib/abraflexi-contractor/
+debian/conf/abraflexi-contractor.conf /etc/apache2/conf-available/
+src/*.php		        usr/share/abraflexi-contractor/
+src/Contractor/*                  usr/lib/abraflexi-contractor/Contractor/
+src/Contractor/ui/*               usr/lib/abraflexi-contractor/Contractor/Ui/
+i18n/cs_CZ/LC_MESSAGES/*.mo     usr/share/locale/cs_CZ/LC_MESSAGES
+i18n/en_US/LC_MESSAGES/*.mo     usr/share/locale/en_US/LC_MESSAGES
