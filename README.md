@@ -1,4 +1,4 @@
-![project logo](project-logo.png?raw=true)
+![project logo](project-logo.svg?raw=true)
 
 Customize and Print you AbraFlexi contracts
 =========================================
