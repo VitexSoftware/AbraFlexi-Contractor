@@ -1,8 +1,7 @@
 {
-    "name": "vitexsoftware/abraflexi-invoice-enhancer",
-    "description": "Invoice Enhancer for AbraFlexi",
+    "name": "vitexsoftware/abraflexi-contractor",
+    "description": "Customize and Print your AbraFlexi Contracts ",
     "type": "project",
-    "version": "0.1",
     "require": {
         "vitexsoftware/ease-twbootstrap5": "dev-main",
         "vitexsoftware/ease-bootstrap5-widgets-abraflexi": "dev-main",

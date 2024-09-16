@@ -20,9 +20,10 @@ namespace AbraFlexi\Contractor;
  *
  * @author Vitex <info@vitexsoftware.cz>
  */
-class Contract extends \AbraFlexi\Smlouva {
-
-    public function __construct($init, $options = []) {
+class Contract extends \AbraFlexi\Smlouva
+{
+    public function __construct($init, $options = [])
+    {
         $this->defaultUrlParams = [
             'relations' => 'polozkySmlouvy,prilohy,udalosti,ucely',
             'detail' => 'full',
@@ -31,9 +32,11 @@ class Contract extends \AbraFlexi\Smlouva {
         parent::__construct($init, $options);
     }
 
-    public function loadFromAbraFlexi($id = null) {
+    public function loadFromAbraFlexi($id = null): void
+    {
         parent::loadFromAbraFlexi($id);
         $firma = $this->getDataValue('firma');
+
         if ($firma) {
             $address = new \AbraFlexi\Adresar(\AbraFlexi\Functions::code($firma), ['nativeTypes' => false]);
             $this->setDataValue('firma', $address->getData());

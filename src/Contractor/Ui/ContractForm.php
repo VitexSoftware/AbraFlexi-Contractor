@@ -18,11 +18,12 @@ namespace AbraFlexi\Contractor\Ui;
 use AbraFlexi\Contractor\Contract;
 use ByJG\JinjaPhp\Template;
 
-class ContractForm extends \Ease\TWB5\Form {
-
+class ContractForm extends \Ease\TWB5\Form
+{
     private Contract $contract;
 
-    public function __construct(Contract $contract) {
+    public function __construct(Contract $contract)
+    {
         parent::__construct();
         $this->contract = $contract;
 
@@ -32,7 +33,7 @@ class ContractForm extends \Ease\TWB5\Form {
         $template->withUndefined(new \ByJG\JinjaPhp\Undefined\DebugUndefined());  // Default is StrictUndefined
 
         $contractData = ['contract' => $contract->getData()];
-        
+
         $this->addItem($template->render($contractData));
     }
 }
