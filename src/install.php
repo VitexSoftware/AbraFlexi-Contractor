@@ -66,10 +66,10 @@ if ($oPage->isPosted()) {
 
     $buttoner->logBanner();
 
-    if($buttoner->recordExists('code:CONTRACTOR')){
-        $buttoner->addStatusMessage(_('The Button with code CONTRACTOR already exists. Updating'),'warning');
+    if ($buttoner->recordExists('code:CONTRACTOR')) {
+        $buttoner->addStatusMessage(_('The Button with code CONTRACTOR already exists. Updating'), 'warning');
     }
-    
+
     $buttoner->insertToAbraFlexi([
         'id' => 'code:CONTRACTOR',
         'url' => $buttonUrl,
