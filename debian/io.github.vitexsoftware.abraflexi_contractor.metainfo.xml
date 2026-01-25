@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.vitexsoftware.abraflexi_contractor</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>abraflexi-contractor</name>
+  <summary>Customize and Print your AbraFlexi Contracts</summary>
+  <description>
+    <p>
+      External Application for AbraFlexi.
+    </p>
+  </description>
+  <categories>
+    <category>Utility</category>
+  </categories>
+  <url type="homepage">https://github.com/VitexSoftware/AbraFlexi-Contractor</url>
+  <url type="bugtracker">https://github.com/VitexSoftware/AbraFlexi-Contractor/issues</url>
+  <developer id="cz.vitexsoftware">
+    <name>VitexSoftware</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+</component>
