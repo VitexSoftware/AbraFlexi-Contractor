@@ -56,5 +56,6 @@
       "type": "path",
       "url": "/usr/share/php/EaseTWB5WidgetsAbraFlexi/"
     }
-  ]
+  ],
+  "version": "0.1.0"
 }
