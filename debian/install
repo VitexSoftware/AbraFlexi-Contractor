@@ -1,7 +1,11 @@
-debian/composer.json       	usr/lib/abraflexi-contractor/
 debian/conf/abraflexi-contractor.conf /etc/apache2/conf-available/
-src/*.php		        usr/share/abraflexi-contractor/
-src/Contractor/*                  usr/lib/abraflexi-contractor/Contractor/
-src/Contractor/ui/*               usr/lib/abraflexi-contractor/Contractor/Ui/
-i18n/cs_CZ/LC_MESSAGES/*.mo     usr/share/locale/cs_CZ/LC_MESSAGES
-i18n/en_US/LC_MESSAGES/*.mo     usr/share/locale/en_US/LC_MESSAGES
+src/*.php                                       usr/share/abraflexi-contractor/
+src/Contractor/*.php                            usr/lib/abraflexi-contractor/Contractor/
+src/Contractor/Ui/*                             usr/lib/abraflexi-contractor/Contractor/Ui/
+vendor/byjg/jinja-php/src/*.php                 usr/lib/abraflexi-contractor/ByJG/
+vendor/byjg/jinja-php/src/Exception/*          usr/lib/abraflexi-contractor/ByJG/Exception/
+vendor/byjg/jinja-php/src/Loader/*             usr/lib/abraflexi-contractor/ByJG/Loader/
+vendor/byjg/jinja-php/src/Undefined/*          usr/lib/abraflexi-contractor/ByJG/Undefined/
+i18n/cs_CZ/LC_MESSAGES/*.mo                     usr/share/locale/cs_CZ/LC_MESSAGES
+i18n/en_US/LC_MESSAGES/*.mo                     usr/share/locale/en_US/LC_MESSAGES
+debian/io.github.vitexsoftware.abraflexi_contractor.metainfo.xml   usr/share/metainfo/

@@ -3,7 +3,6 @@ set -e
 
 case "$1" in
     configure)
-	composer-debian abraflexi-enhancer
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

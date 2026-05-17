@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<component type="desktop-application">
+<component type="web-application">
   <id>io.github.vitexsoftware.abraflexi_contractor</id>
   <metadata_license>MIT</metadata_license>
   <project_license>MIT</project_license>
-  <name>abraflexi-contractor</name>
+  <name>AbraFlexi Contractor</name>
   <summary>Customize and Print your AbraFlexi Contracts</summary>
   <description>
     <p>
-      External Application for AbraFlexi.
+      External web application for AbraFlexi that allows you to customize
+      and print business contracts using Jinja2-style templates.
     </p>
   </description>
+  <icon type="stock">applications-internet</icon>
+  <launchable type="url">http://localhost/abraflexi-contractor/</launchable>
   <categories>
-    <category>Utility</category>
+    <category>Office</category>
+    <category>Finance</category>
   </categories>
   <url type="homepage">https://github.com/VitexSoftware/AbraFlexi-Contractor</url>
   <url type="bugtracker">https://github.com/VitexSoftware/AbraFlexi-Contractor/issues</url>
