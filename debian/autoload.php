@@ -8,21 +8,12 @@ require_once '/usr/share/php/AbraFlexiBricks/autoload.php';
 require_once '/usr/share/php/EaseTWB5/autoload.php';
 require_once '/usr/share/php/EaseTWB5Widgets/autoload.php';
 require_once '/usr/share/php/EaseTWB5WidgetsAbraFlexi/autoload.php';
+require_once '/usr/share/php/ByJG/JinjaPhp/autoload.php';
 
 spl_autoload_register(function (string $class): void {
     $prefix = 'AbraFlexi\\Contractor\\';
     if (str_starts_with($class, $prefix)) {
         $file = '/usr/lib/abraflexi-contractor/Contractor/' . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
-        if (file_exists($file)) {
-            require $file;
-        }
-    }
-});
-
-spl_autoload_register(function (string $class): void {
-    $prefix = 'ByJG\\JinjaPhp\\';
-    if (str_starts_with($class, $prefix)) {
-        $file = '/usr/lib/abraflexi-contractor/ByJG/' . str_replace('\\', '/', substr($class, strlen($prefix))) . '.php';
         if (file_exists($file)) {
             require $file;
         }
