@@ -30,6 +30,13 @@ override_dh_install:
 	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
 	    debian/abraflexi-contractor/usr/share/abraflexi-contractor/autoload.php
 
+	sed -i "s|require_once __DIR__.'/../vendor/autoload.php';|require_once '/usr/share/abraflexi-contractor/autoload.php';|" \
+	    debian/abraflexi-contractor/usr/bin/abraflexi-contractor
+	chmod 755 debian/abraflexi-contractor/usr/bin/abraflexi-contractor
+	for app in multiflexi/*.multiflexi.app.json; do \
+		jq '.version = "$(PKG_VERSION)"' $$app > debian/multiflexi-abraflexi-contractor/usr/lib/abraflexi-contractor/$$app || exit 1; \
+	done
+
 override_dh_auto_test:
 	appstreamcli validate --pedantic --no-net \
 	    debian/io.github.vitexsoftware.abraflexi_contractor.metainfo.xml

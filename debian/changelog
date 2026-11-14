@@ -1,3 +1,11 @@
+abraflexi-contractor (0.2.0) unstable; urgency=medium
+
+  * Add abraflexi-contractor command: create contracts and add or remove their
+    items (create, add-item, remove-item, list-items), JSON output
+  * Add multiflexi-abraflexi-contractor: the command as a MultiFlexi application
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sat, 14 Nov 2026 16:05:42 +0100
+
 abraflexi-contractor (0.1.0) UNRELEASED; urgency=low
 
   * Initial release. Closes: #nnnn

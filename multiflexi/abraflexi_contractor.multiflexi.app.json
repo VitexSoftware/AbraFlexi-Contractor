@@ -1,0 +1,214 @@
+{
+  "$schema": "https://multiflexi.eu/schema/application.json",
+  "schemaVersion": "3.4.0",
+  "version": "1.0.0",
+  "uuid": "32766631-8aa3-4b30-9884-1b1a94f95332",
+  "name": {
+    "en": "AbraFlexi Contractor",
+    "cs": "AbraFlexi Contractor"
+  },
+  "description": {
+    "en": "Create AbraFlexi contracts and add or remove their items. ACTION selects create, add-item, remove-item or list-items.",
+    "cs": "Vytváří smlouvy v AbraFlexi a přidává či odebírá jejich položky. ACTION volí create, add-item, remove-item nebo list-items."
+  },
+  "tags": [
+    "AbraFlexi",
+    "Contract",
+    "Smlouva"
+  ],
+  "requirements": [
+    "AbraFlexi"
+  ],
+  "homepage": "https://github.com/VitexSoftware/AbraFlexi-Contractor/",
+  "ociimage": "docker.io/vitexsoftware/abraflexi-contractor",
+  "executable": "abraflexi-contractor",
+  "cmdparamsTemplate": "{ACTION} {CONTRACT} --firma={FIRMA} --type={CONTRACT_TYPE} --name={CONTRACT_NAME} --from={VALID_FROM} --to={VALID_TO} --item={ITEM} --cenik={CENIK} --qty={QTY} --price={PRICE} --id={ITEM_ID}",
+  "environment": {
+    "ACTION": {
+      "type": "string",
+      "description": {
+        "en": "create, add-item, remove-item or list-items",
+        "cs": "create, add-item, remove-item nebo list-items"
+      },
+      "defval": "list-items",
+      "required": true,
+      "category": "Behavior"
+    },
+    "CONTRACT": {
+      "type": "string",
+      "description": {
+        "en": "Contract code (or id); for create the code of the new contract (generated when empty)",
+        "cs": "Kód (nebo id) smlouvy; u create kód nové smlouvy (při prázdné hodnotě se vygeneruje)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "FIRMA": {
+      "type": "string",
+      "description": {
+        "en": "Customer address book code (create)",
+        "cs": "Kód zákazníka v adresáři (create)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "CONTRACT_TYPE": {
+      "type": "string",
+      "description": {
+        "en": "Contract type code (create)",
+        "cs": "Kód typu smlouvy (create)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "CONTRACT_NAME": {
+      "type": "string",
+      "description": {
+        "en": "Contract name (create)",
+        "cs": "Název smlouvy (create)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "VALID_FROM": {
+      "type": "string",
+      "description": {
+        "en": "Valid from, YYYY-MM-DD (create; today when empty)",
+        "cs": "Platnost od, RRRR-MM-DD (create; při prázdné hodnotě dnes)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "VALID_TO": {
+      "type": "string",
+      "description": {
+        "en": "Valid to, YYYY-MM-DD (create)",
+        "cs": "Platnost do, RRRR-MM-DD (create)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "ITEM": {
+      "type": "string",
+      "description": {
+        "en": "Item of the new contract as PRICELIST[:QTY[:PRICE]] (create)",
+        "cs": "Položka nové smlouvy ve tvaru CENIK[:MNOZSTVI[:CENA]] (create)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "CENIK": {
+      "type": "string",
+      "description": {
+        "en": "Pricelist code (add-item, remove-item)",
+        "cs": "Kód ceníku (add-item, remove-item)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "QTY": {
+      "type": "string",
+      "description": {
+        "en": "Quantity (add-item; 1 when empty)",
+        "cs": "Množství (add-item; při prázdné hodnotě 1)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "PRICE": {
+      "type": "string",
+      "description": {
+        "en": "Unit price (add-item; the pricelist price when empty)",
+        "cs": "Jednotková cena (add-item; při prázdné hodnotě cena z ceníku)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "ITEM_ID": {
+      "type": "string",
+      "description": {
+        "en": "Id of the item to remove (remove-item)",
+        "cs": "Id odebírané položky (remove-item)"
+      },
+      "defval": "",
+      "required": false,
+      "category": "Behavior"
+    },
+    "ABRAFLEXI_URL": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi server URL",
+        "cs": "URL serveru AbraFlexi"
+      },
+      "defval": "https://demo.flexibee.eu:5434",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_LOGIN": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi user",
+        "cs": "Uživatel AbraFlexi"
+      },
+      "defval": "winstrom",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "AbraFlexi password",
+        "cs": "Heslo AbraFlexi"
+      },
+      "defval": "winstrom",
+      "required": true,
+      "category": "API"
+    },
+    "ABRAFLEXI_COMPANY": {
+      "type": "string",
+      "description": {
+        "en": "AbraFlexi company",
+        "cs": "Firma v AbraFlexi"
+      },
+      "defval": "demo_de",
+      "required": true,
+      "category": "API"
+    }
+  },
+  "exitCodes": {
+    "0": {
+      "description": {
+        "en": "Success",
+        "cs": "Úspěch"
+      },
+      "severity": "success",
+      "retry": false
+    },
+    "1": {
+      "description": {
+        "en": "AbraFlexi refused the operation",
+        "cs": "AbraFlexi operaci odmítlo"
+      },
+      "severity": "error",
+      "retry": false
+    },
+    "2": {
+      "description": {
+        "en": "Bad usage or invalid input",
+        "cs": "Chybné použití nebo neplatný vstup"
+      },
+      "severity": "error",
+      "retry": false
+    }
+  }
+}

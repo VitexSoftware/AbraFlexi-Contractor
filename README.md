@@ -14,6 +14,24 @@ Customize and Print your AbraFlexi Contracts
 Usage
 -----
 
+### Command line: create contracts and manage their items
+
+```bash
+export ABRAFLEXI_URL=https://abraflexi.example.org:5434 ABRAFLEXI_COMPANY=firma \
+       ABRAFLEXI_LOGIN=user ABRAFLEXI_PASSWORD=secret
+
+# create a contract with two items (PRICELIST[:QTY[:PRICE]])
+abraflexi-contractor create SMLOUVA-1 --firma=ZAKAZNIK --type=SAAS \
+    --item=MULTIFLEXI:1 --item=NEXTCLOUD1:2:49
+
+abraflexi-contractor add-item    SMLOUVA-1 --cenik=MAILBOX1 --qty=5
+abraflexi-contractor remove-item SMLOUVA-1 --cenik=MAILBOX1      # or --id=ITEM_ID
+abraflexi-contractor list-items  SMLOUVA-1
+```
+
+Output is JSON. Without `--price` the base price without VAT of the pricelist item is used.
+Exit code is 0 on success, 1 when AbraFlexi refuses the operation, 2 on invalid input.
+The package `multiflexi-abraflexi-contractor` provides the same tool as a MultiFlexi application.
 
 
 Installation

@@ -1,0 +1,211 @@
+#!/usr/bin/php
+<?php
+
+declare(strict_types=1);
+
+/**
+ * This file is part of the AbraflexiContractor package
+ *
+ * https://github.com/VitexSoftware/AbraFlexi-Contractor
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+use AbraFlexi\Contractor\ContractManager;
+use Ease\Shared;
+
+\define('APP_NAME', 'AbraFlexiContractor');
+
+require_once __DIR__.'/../vendor/autoload.php';
+
+const USAGE = <<<'USAGE'
+    Usage:
+      abraflexi-contractor create [CODE] --firma=CODE --type=CODE [--name=TEXT]
+                                  [--from=YYYY-MM-DD] [--to=YYYY-MM-DD] [--item=PRICELIST[:QTY[:PRICE]]]...
+      abraflexi-contractor add-item CONTRACT --cenik=CODE [--qty=N] [--price=N] [--name=TEXT]
+      abraflexi-contractor remove-item CONTRACT (--cenik=CODE | --id=N)
+      abraflexi-contractor list-items CONTRACT
+
+    Connection: ABRAFLEXI_URL, ABRAFLEXI_LOGIN, ABRAFLEXI_PASSWORD, ABRAFLEXI_COMPANY
+    (environment or the file given by --env=FILE).
+
+    Output is JSON; exit code is 0 on success, 1 on error, 2 on bad usage.
+
+    USAGE;
+
+/**
+ * Print a JSON document to stdout.
+ *
+ * @param array<mixed> $document
+ */
+function emit(array $document): void
+{
+    echo json_encode($document, \JSON_PRETTY_PRINT | \JSON_UNESCAPED_UNICODE | \JSON_UNESCAPED_SLASHES), "\n";
+}
+
+/**
+ * Split the command line into options (--name=value or --name value, repeatable) and positional arguments.
+ *
+ * PHP's getopt() stops at the first positional argument, so options after the action would be lost.
+ *
+ * @param array<int, string> $arguments
+ *
+ * @return array{0: array<string, array<int, string>|string|true>, 1: array<int, string>}
+ */
+function parseArguments(array $arguments): array
+{
+    $valued = ['firma', 'type', 'code', 'name', 'from', 'to', 'item', 'cenik', 'qty', 'price', 'id', 'env'];
+    $options = [];
+    $positional = [];
+
+    for ($i = 0, $count = \count($arguments); $i < $count; ++$i) {
+        $argument = $arguments[$i];
+
+        // MultiFlexi leaves "{VARIABLE}" in the command line when the variable is empty: such argument is not given
+        if ($argument === '' || preg_match('/\{[A-Z_]+\}/', $argument)) {
+            continue;
+        }
+
+        if (!str_starts_with($argument, '--') || $argument === '--') {
+            $positional[] = $argument;
+
+            continue;
+        }
+
+        [$name, $value] = array_pad(explode('=', substr($argument, 2), 2), 2, null);
+
+        if (!\in_array($name, $valued, true)) {
+            $options[$name] = true;
+
+            continue;
+        }
+
+        if ($value === null) {
+            $value = $arguments[++$i] ?? '';
+        }
+
+        if ($name === 'item') {
+            $options['item'][] = $value;
+        } else {
+            $options[$name] = $value;
+        }
+    }
+
+    return [$options, $positional];
+}
+
+[$options, $positional] = parseArguments(\array_slice($argv, 1));
+$action = array_shift($positional);
+
+if ($action === null || $action === 'help' || isset($options['help'])) {
+    fwrite($action === null ? \STDERR : \STDOUT, USAGE);
+
+    exit($action === null ? 2 : 0);
+}
+
+/**
+ * Single value of an option that may be given more than once.
+ *
+ * @param array<string, mixed> $options
+ */
+function opt(array $options, string $name): ?string
+{
+    $value = $options[$name] ?? null;
+
+    return \is_array($value) ? (string) end($value) : ($value === null ? null : (string) $value);
+}
+
+Shared::init(['ABRAFLEXI_URL', 'ABRAFLEXI_LOGIN', 'ABRAFLEXI_PASSWORD', 'ABRAFLEXI_COMPANY'], opt($options, 'env') ?? '');
+
+$manager = new ContractManager();
+$contract = $positional[0] ?? '';
+
+try {
+    switch ($action) {
+        case 'create':
+            $firma = opt($options, 'firma');
+            $type = opt($options, 'type');
+
+            if (empty($firma) || empty($type)) {
+                fwrite(\STDERR, "create needs --firma and --type\n".USAGE);
+
+                exit(2);
+            }
+
+            $data = array_filter([
+                'kod' => opt($options, 'code') ?? ($contract !== '' ? $contract : null),
+                'nazev' => opt($options, 'name'),
+                'smlouvaOd' => opt($options, 'from'),
+                'smlouvaDo' => opt($options, 'to'),
+            ], static fn (?string $value): bool => $value !== null && $value !== '');
+            $items = isset($options['item']) ? (array) $options['item'] : [];
+            $code = $manager->createContract($firma, $type, $data, $items);
+            emit(['contract' => $code, 'items' => array_values($manager->listItems($code))]);
+
+            break;
+        case 'add-item':
+            $cenik = opt($options, 'cenik');
+
+            if ($contract === '' || empty($cenik)) {
+                fwrite(\STDERR, "add-item needs CONTRACT and --cenik\n".USAGE);
+
+                exit(2);
+            }
+
+            $qty = opt($options, 'qty');
+            $price = opt($options, 'price');
+
+            foreach (['qty' => $qty, 'price' => $price] as $label => $number) {
+                if ($number !== null && !is_numeric($number)) {
+                    fwrite(\STDERR, "--{$label} must be a number\n");
+
+                    exit(2);
+                }
+            }
+
+            $id = $manager->addItem($contract, $cenik, $qty === null ? 1.0 : (float) $qty, $price === null ? null : (float) $price, opt($options, 'name'));
+            emit(['contract' => $contract, 'added' => $id, 'items' => array_values($manager->listItems($contract))]);
+
+            break;
+        case 'remove-item':
+            $id = opt($options, 'id');
+            $cenik = opt($options, 'cenik');
+
+            if ($contract === '' || ($id === null && empty($cenik)) || ($id !== null && !ctype_digit($id))) {
+                fwrite(\STDERR, "remove-item needs CONTRACT and --cenik or a numeric --id\n".USAGE);
+
+                exit(2);
+            }
+
+            $removed = $manager->removeItems($contract, $id === null ? null : (int) $id, $cenik);
+            emit(['contract' => $contract, 'removed' => $removed, 'items' => array_values($manager->listItems($contract))]);
+
+            break;
+        case 'list-items':
+            if ($contract === '') {
+                fwrite(\STDERR, "list-items needs CONTRACT\n".USAGE);
+
+                exit(2);
+            }
+
+            emit(['contract' => $contract, 'items' => array_values($manager->listItems($contract))]);
+
+            break;
+
+        default:
+            fwrite(\STDERR, "Unknown action {$action}\n".USAGE);
+
+            exit(2);
+    }
+} catch (\InvalidArgumentException $exc) {
+    fwrite(\STDERR, $exc->getMessage()."\n");
+
+    exit(2);
+} catch (\Throwable $exc) {
+    emit(['error' => $exc->getMessage(), 'code' => $exc->getCode()]);
+
+    exit(1);
+}

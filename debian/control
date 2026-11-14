@@ -14,3 +14,12 @@ Depends: ${shlibs:Depends}, composer, php-spojenet-abraflexi, php-vitexsoftware-
 	${misc:Depends}
 Description: Customize and Print your AbraFlexi Contracts
  External Application for AbraFlexi.
+
+Package: multiflexi-abraflexi-contractor
+Depends: ${misc:Depends}, abraflexi-contractor, multiflexi-abraflexi
+Architecture: all
+Section: web
+Priority: optional
+Description: Add AbraFlexi Contractor to MultiFlexi
+ MultiFlexi application that creates AbraFlexi contracts and adds or
+ removes their items.

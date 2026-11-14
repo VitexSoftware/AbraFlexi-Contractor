@@ -1,0 +1,13 @@
+#!/bin/sh
+# postinst script for abraflexi-contractor
+set -e
+
+APPLICATION=$(echo $DPKG_MAINTSCRIPT_PACKAGE | sed 's/multiflexi-//')
+for file in $(ls /usr/lib/$APPLICATION/multiflexi/*.json)
+do
+	multiflexi-cli application:import-json --file $file
+done
+
+#DEBHELPER#
+
+exit 0

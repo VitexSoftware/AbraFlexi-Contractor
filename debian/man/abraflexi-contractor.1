@@ -1,0 +1,55 @@
+.TH ABRAFLEXI-CONTRACTOR 1 "November 2026" "abraflexi-contractor" "User Commands"
+.SH NAME
+abraflexi-contractor \- create AbraFlexi contracts and add or remove their items
+.SH SYNOPSIS
+.B abraflexi-contractor create
+[\fICODE\fR] \fB\-\-firma\fR=\fICODE\fR \fB\-\-type\fR=\fICODE\fR [\fB\-\-name\fR=\fITEXT\fR] [\fB\-\-from\fR=\fIYYYY-MM-DD\fR] [\fB\-\-to\fR=\fIYYYY-MM-DD\fR] [\fB\-\-item\fR=\fIPRICELIST[:QTY[:PRICE]]\fR]...
+.br
+.B abraflexi-contractor add-item
+\fICONTRACT\fR \fB\-\-cenik\fR=\fICODE\fR [\fB\-\-qty\fR=\fIN\fR] [\fB\-\-price\fR=\fIN\fR] [\fB\-\-name\fR=\fITEXT\fR]
+.br
+.B abraflexi-contractor remove-item
+\fICONTRACT\fR (\fB\-\-cenik\fR=\fICODE\fR | \fB\-\-id\fR=\fIN\fR)
+.br
+.B abraflexi-contractor list-items
+\fICONTRACT\fR
+.SH DESCRIPTION
+Creates contracts (evidence \fIsmlouva\fR) in AbraFlexi and adds or removes their
+items (\fIsmlouva-polozka\fR). Output is JSON.
+.PP
+\fBcreate\fR makes a contract for the customer \fB\-\-firma\fR with the contract type
+\fB\-\-type\fR. The contract code is \fICODE\fR, \fB\-\-code\fR, or generated when omitted.
+Items given with repeated \fB\-\-item\fR are created together with the contract; when any of
+them is invalid nothing is created.
+.PP
+\fBadd-item\fR adds one pricelist item. Without \fB\-\-price\fR the base price without VAT
+of the pricelist item is used.
+.PP
+\fBremove-item\fR removes either the item with the given id, or every item of the
+contract that refers to the pricelist code.
+.SH OPTIONS
+.TP
+\fB\-\-env\fR=\fIFILE\fR
+Read the connection from this environment file.
+.SH ENVIRONMENT
+.TP
+.B ABRAFLEXI_URL, ABRAFLEXI_LOGIN, ABRAFLEXI_PASSWORD, ABRAFLEXI_COMPANY
+Connection to the AbraFlexi company.
+.SH EXIT STATUS
+.TP
+.B 0
+Success.
+.TP
+.B 1
+AbraFlexi refused the operation.
+.TP
+.B 2
+Bad usage or invalid input.
+.SH EXAMPLES
+.nf
+abraflexi-contractor create SMLOUVA-1 \-\-firma=ZAKAZNIK \-\-type=SAAS \-\-item=MULTIFLEXI:1
+abraflexi-contractor add-item SMLOUVA-1 \-\-cenik=NEXTCLOUD1 \-\-qty=2
+abraflexi-contractor remove-item SMLOUVA-1 \-\-cenik=NEXTCLOUD1
+.fi
+.SH AUTHOR
+Vítězslav Dvořák <info@vitexsoftware.cz>
